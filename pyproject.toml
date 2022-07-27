@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "BWSync"
+version = "0.1.0"
+description = "Sync Bitbucket workspace repositories"
+authors = ["Eray Aydın <erayaydinn@protonmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = "^0.6.1"
+rich = "^12.5.1"
+atlassian-python-api = "^3.25.0"
+GitPython = "^3.1.27"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1"
+pytest-cov = "^3.0.0"
+wemake-python-styleguide = "^0.16.1"
+mypy = "^0.971"
+safety = "^2.1.1"
+pre-commit = "^2.20.0"
+nitpick = "^0.32.0"
+
+[tool.poetry.scripts]
+bwsync = "bwsync.cli:app"
+
+[tool.nitpick]
+style = "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/nitpick-style-wemake.toml"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
